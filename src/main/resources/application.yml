@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: policy
+  datasource:
+    url: jdbc:mysql://localhost:3306/sprinto
+    username: root
+    password: shirdisai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/sprinto
+      database: sprinto
+
+  jpa:
+    database-platform:
+      org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
