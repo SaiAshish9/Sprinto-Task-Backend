@@ -1,15 +1,13 @@
 package com.sai.sprinto.policy.enums;
 
-public enum Role {
-    ADMIN("ADMIN"),
-    CXO("CXO"),
-    HR("HR"),
-    ENGINEER("ENGINEER"),
+public enum AcknowledgementType {
+    MANUAL("MANUAL"),
+    PERIODIC("PERIODIC"),
     CUSTOMER("CUSTOMER");
 
     private final String value;
 
-    Role(String value) {
+    AcknowledgementType(String value) {
         this.value = value;
     }
 
@@ -17,4 +15,3 @@ public enum Role {
         return value;
     }
 }
-

@@ -18,10 +18,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Policy {
     @Id
     private String id = UUID.randomUUID().toString();
-
+    private String name;
     private PolicyType type;
+    private boolean createdByCustomer;
     private boolean acknowledged; // by all engineers and HRs
-    private boolean requiresHRAcknowledgment;
+    private boolean requiresHRAcknowledgement;
     private boolean approved; // by the Admin (CTO)
     private int version;
     private Map<String, Object> metadata;

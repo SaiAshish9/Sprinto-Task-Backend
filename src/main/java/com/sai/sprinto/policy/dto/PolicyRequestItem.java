@@ -10,8 +10,10 @@ import java.util.Map;
 @AllArgsConstructor
 public class PolicyRequestItem {
     private PolicyType type;
+    private String name;
+    private boolean createdByCustomer;
     private boolean acknowledged; // by all engineers and HRs
-    private boolean requiresHRAcknowledgment;
+    private boolean requiresHRAcknowledgement;
     private boolean approved; // by the Admin (CTO)
     private int version;
     private Map<String, Object> metadata;

@@ -20,3 +20,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+logging:
+  level:
+    com.sai.sprinto.policy.listener.AcknowledgementListener: INFO
+  file:
+    name: logs/acknowledgements.log

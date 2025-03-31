@@ -11,6 +11,7 @@ public class UserBuilder {
         User user = new User();
         user.setName(userRequestDto.getName());
         user.setRole(userRequestDto.getRole());
+        user.setProfilePicUrl(userRequestDto.getProfilePicUrl());
         return user;
     }
 

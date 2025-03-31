@@ -1,14 +1,11 @@
 package com.sai.sprinto.policy.builder;
 
-import com.sai.sprinto.policy.dto.PolicyRequestDto;
 import com.sai.sprinto.policy.dto.PolicyRequestItem;
 import com.sai.sprinto.policy.entity.mongoDB.Policy;
-import com.sai.sprinto.policy.enums.PolicyType;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @UtilityClass
 public class PolicyBuilder {
@@ -25,8 +22,10 @@ public class PolicyBuilder {
             Policy policy = new Policy();
             policy.setType(policyRequestItem.getType());
             policy.setAcknowledged(policyRequestItem.isAcknowledged());
-            policy.setRequiresHRAcknowledgment(policyRequestItem.isRequiresHRAcknowledgment());
+            policy.setRequiresHRAcknowledgement(policyRequestItem.isRequiresHRAcknowledgement());
             policy.setApproved(policyRequestItem.isApproved());
+            policy.setCreatedByCustomer(policyRequestItem.isCreatedByCustomer());
+            policy.setName(policyRequestItem.getName());
             policy.setVersion(policyRequestItem.getVersion());
             policy.setMetadata(policyRequestItem.getMetadata());
             policy.setCreatedAt(policyRequestItem.getCreatedAt());

@@ -13,8 +13,8 @@ import java.util.UUID;
 public class User {
     @Id
     private String id;
-
     private String name;
+    private String profilePicUrl;
 
     @Enumerated(EnumType.STRING)
     private Role role;
