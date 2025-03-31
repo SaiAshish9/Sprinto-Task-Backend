@@ -21,6 +21,7 @@ public class Acknowledgement {
     private String userId;
     private String policyId;
     private AcknowledgementType type = AcknowledgementType.MANUAL;
+    private double version = 1.0;
 
     @PrePersist
     public void generateId() {

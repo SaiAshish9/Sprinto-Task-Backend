@@ -1,9 +1,6 @@
 package com.sai.sprinto.policy.entity.sql;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,16 +8,15 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Entity
-@Table(name = "customer_templates")
+@Table(name = "customer_employee_mappings")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerTemplate {
+public class CustomerEmployeeMappings {
     @Id
     private String id;
-    private String userId;
-    private String policyId;
-    private double version = 1.0;
+    private String customerId;
+    private String employeeId;
 
     @PrePersist
     public void generateId() {

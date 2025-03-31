@@ -30,12 +30,8 @@ public class PolicyController {
 
     @PostMapping("policies")
     public ResponseEntity createPolicy(@RequestBody PolicyRequestDto policyRequestDto) {
-        policyService.savePolicy(policyRequestDto.getPolicies());
-        return ResponseEntity.ok(PostResponseDto
-                .builder()
-                .message("Policies Created")
-                .statusCode(HttpStatus.OK.value())
-                .build());
+        List<Policy> policies = policyService.savePolicy(policyRequestDto.getPolicies());
+        return ResponseEntity.ok(policies);
     }
 
     @PostMapping("user_policies")

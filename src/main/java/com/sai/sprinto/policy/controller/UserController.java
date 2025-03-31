@@ -19,8 +19,11 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("users")
-    public List<User> getAllUsers() {
-        List<User> users = userService.getAllUsers();
+    public List<User> getAllUsers(
+            @RequestParam(value = "mimic", required = false, defaultValue = "false") boolean mimic,
+            @RequestParam(value = "customerId", required = false, defaultValue = "") String customerId
+            ) {
+        List<User> users = userService.getAllUsers(mimic, customerId);
         return users;
     }
 

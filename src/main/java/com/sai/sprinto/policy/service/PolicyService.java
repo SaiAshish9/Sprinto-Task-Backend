@@ -6,9 +6,11 @@ import com.sai.sprinto.policy.dto.AcknowledgementRequestDto;
 import com.sai.sprinto.policy.dto.PolicyRequestItem;
 import com.sai.sprinto.policy.entity.mongoDB.Policy;
 import com.sai.sprinto.policy.entity.sql.Acknowledgement;
+import com.sai.sprinto.policy.entity.sql.CustomerTemplate;
 import com.sai.sprinto.policy.enums.Role;
 import com.sai.sprinto.policy.models.UserPolicy;
 import com.sai.sprinto.policy.repository.AcknowledgementRepository;
+import com.sai.sprinto.policy.repository.CustomerTemplateRepository;
 import com.sai.sprinto.policy.repository.PolicyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,13 +25,15 @@ public class PolicyService {
     private final PolicyRepository policyRepository;
     private final AcknowledgementRepository acknowledgementRepository;
     private final AcknowledgementService acknowledgementService;
+    private final CustomerTemplateRepository customerTemplateRepository;
 
     public List<Policy> getAllPolicies() {
         return policyRepository.findAll();
     }
 
-    public void savePolicy(List<PolicyRequestItem> policyRequestItems) {
-        policyRepository.saveAll(PolicyBuilder.createPolicies(policyRequestItems));
+    public List<Policy> savePolicy(List<PolicyRequestItem> policyRequestItems) {
+        List<Policy> policies = policyRepository.saveAll(PolicyBuilder.createPolicies(policyRequestItems));
+        return policies;
     }
 
     public List<UserPolicy> getUserPolicies(String userId, Role role, boolean modified) {
@@ -46,9 +50,9 @@ public class PolicyService {
                 break;
             }
             case ADMIN -> {
-                if(modified){
+                if (modified) {
                     approvedPolicies = policyRepository.findByVersionGreaterThan(1);
-                }else {
+                } else {
                     approvedPolicies = policyRepository.findAll();
                 }
                 break;
@@ -62,9 +66,9 @@ public class PolicyService {
                 break;
             }
             default -> {
-                if(modified){
+                if (modified) {
                     approvedPolicies = policyRepository.findByApprovedTrueAndVersionGreaterThan(1);
-                }else {
+                } else {
                     approvedPolicies = policyRepository.findByApprovedTrue();
                 }
             }
@@ -81,6 +85,33 @@ public class PolicyService {
         }
 
         List<UserPolicy> userPolicies = UserPolicyBuilder.createPolicies(approvedPolicies, acknowledgedPolicyIds);
+        List<String> selectedPolicyIds = new ArrayList<>();
+        double maxVersion;
+        List<CustomerTemplate> customerTemplates = new ArrayList<>();
+
+        if (role == Role.CUSTOMER) {
+            customerTemplates = customerTemplateRepository.findByUserId(userId);
+            selectedPolicyIds = customerTemplates
+                    .stream()
+                    .map(acknowledgement -> acknowledgement.getPolicyId())
+                    .toList();
+        }
+
+        for (UserPolicy userPolicy : userPolicies) {
+            maxVersion = customerTemplates
+                    .stream()
+                    .filter(template -> template.getPolicyId().equals(userPolicy.getId()))
+                    .map(CustomerTemplate::getVersion)
+                    .max(Double::compareTo)
+                    .orElse(1.0);
+            if (selectedPolicyIds.contains(userPolicy.getId())) {
+                userPolicy.setSelectedByCustomer(true);
+            }
+            if(maxVersion > userPolicy.getVersion()){
+                userPolicy.setUpgradeRequired(true);
+            }
+        }
+
         return userPolicies;
     }
 

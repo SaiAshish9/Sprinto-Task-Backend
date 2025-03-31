@@ -1,9 +1,8 @@
 package com.sai.sprinto.policy.controller;
 
+import com.sai.sprinto.policy.dto.CustomerEmployeeMappingRequestDto;
 import com.sai.sprinto.policy.dto.PostResponseDto;
-import com.sai.sprinto.policy.dto.UserRequestDto;
-import com.sai.sprinto.policy.dto.UserTemplateRequestDto;
-import com.sai.sprinto.policy.service.UserTemplateService;
+import com.sai.sprinto.policy.service.CustomerEmployeeMappingsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,19 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/u/")
 @RequiredArgsConstructor
-public class UserTemplateController {
+public class CustomerEmployeeMappingController {
 
-    private final UserTemplateService userTemplateService;
+    private final CustomerEmployeeMappingsService customerEmployeeMappingsService;
 
-    @PostMapping("user")
-    public ResponseEntity createUserTemplate(@RequestBody UserTemplateRequestDto userTemplateRequestDto) {
-        userTemplateService.createUserTemplate(userTemplateRequestDto);
+    @PostMapping("customerEmployeeMapping")
+    public ResponseEntity createCustomerEmployeeMapping(@RequestBody CustomerEmployeeMappingRequestDto customerEmployeeMappingRequestDto) {
+        customerEmployeeMappingsService.createCustomerEmployeeMapping(customerEmployeeMappingRequestDto);
         return ResponseEntity.ok(PostResponseDto
                 .builder()
-                .message("UserTemplate Created")
+                .message("CustomerEmployeeMapping Created")
                 .statusCode(HttpStatus.OK.value())
                 .build());
     }
-
 
 }

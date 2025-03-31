@@ -24,7 +24,7 @@ public class Policy {
     private boolean acknowledged; // by all engineers and HRs
     private boolean requiresHRAcknowledgement;
     private boolean approved; // by the Admin (CTO)
-    private int version;
+    private double version = 1.0;
     private Map<String, Object> metadata;
     private String createdAt;
     private String updatedAt;
