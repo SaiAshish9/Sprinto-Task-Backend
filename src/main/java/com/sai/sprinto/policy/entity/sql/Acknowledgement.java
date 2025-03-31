@@ -20,6 +20,7 @@ public class Acknowledgement {
     private String id;
     private String userId;
     private String policyId;
+    private String customerId;
     private AcknowledgementType type = AcknowledgementType.MANUAL;
     private double version = 1.0;
 

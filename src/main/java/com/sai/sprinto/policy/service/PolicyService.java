@@ -7,6 +7,7 @@ import com.sai.sprinto.policy.dto.PolicyRequestItem;
 import com.sai.sprinto.policy.entity.mongoDB.Policy;
 import com.sai.sprinto.policy.entity.sql.Acknowledgement;
 import com.sai.sprinto.policy.entity.sql.CustomerTemplate;
+import com.sai.sprinto.policy.enums.AcknowledgementType;
 import com.sai.sprinto.policy.enums.Role;
 import com.sai.sprinto.policy.models.UserPolicy;
 import com.sai.sprinto.policy.repository.AcknowledgementRepository;
@@ -15,9 +16,7 @@ import com.sai.sprinto.policy.repository.PolicyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -75,6 +74,7 @@ public class PolicyService {
         }
 
         List<String> acknowledgedPolicyIds = new ArrayList<>();
+        Map<String, AcknowledgementType> acknowledgementTypeMap = new HashMap<>();
 
         if (role != Role.ADMIN) {
             List<Acknowledgement> acknowledgements = acknowledgementRepository.findByUserId(userId);
@@ -82,9 +82,12 @@ public class PolicyService {
                     .stream()
                     .map(acknowledgement -> acknowledgement.getPolicyId())
                     .toList();
+            for(Acknowledgement acknowledgement: acknowledgements){
+                acknowledgementTypeMap.put(acknowledgement.getPolicyId(), acknowledgement.getType());
+            }
         }
 
-        List<UserPolicy> userPolicies = UserPolicyBuilder.createPolicies(approvedPolicies, acknowledgedPolicyIds);
+        List<UserPolicy> userPolicies = UserPolicyBuilder.createPolicies(approvedPolicies, acknowledgedPolicyIds, acknowledgementTypeMap);
         List<String> selectedPolicyIds = new ArrayList<>();
         double maxVersion;
         List<CustomerTemplate> customerTemplates = new ArrayList<>();

@@ -7,5 +7,7 @@ import lombok.Data;
 public class AcknowledgementRequestDto {
     private String userId;
     private String policyId;
+    private String customerId;
+    private int version;
     private Role role;
 }

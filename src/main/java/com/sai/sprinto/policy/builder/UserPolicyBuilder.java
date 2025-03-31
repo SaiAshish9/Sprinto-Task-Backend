@@ -1,16 +1,18 @@
 package com.sai.sprinto.policy.builder;
 
 import com.sai.sprinto.policy.entity.mongoDB.Policy;
+import com.sai.sprinto.policy.enums.AcknowledgementType;
 import com.sai.sprinto.policy.models.UserPolicy;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @UtilityClass
 public class UserPolicyBuilder {
 
-    public static List<UserPolicy> createPolicies(List<Policy> policies, List<String> acknowledgedPolicyIds) {
+    public static List<UserPolicy> createPolicies(List<Policy> policies, List<String> acknowledgedPolicyIds, Map<String, AcknowledgementType> acknowledgementTypeMap) {
         List<UserPolicy> userPolicies = new ArrayList<>();
 
         for (Policy policy : policies) {
@@ -19,6 +21,15 @@ public class UserPolicyBuilder {
             userPolicy.setName(policy.getName());
             userPolicy.setType(policy.getType());
             userPolicy.setAcknowledged(acknowledgedPolicyIds.contains(policy.getId()));
+            if (acknowledgementTypeMap.get(policy.getId()) != null) {
+                userPolicy.setAcknowledgementType(acknowledgementTypeMap.get(policy.getId()));
+            } else {
+                if (policy.getVersion() > 1) {
+                    userPolicy.setAcknowledgementType(AcknowledgementType.PERIODIC);
+                } else {
+                    userPolicy.setAcknowledgementType(AcknowledgementType.MANUAL);
+                }
+            }
             userPolicy.setAcknowledgedByAll(policy.isAcknowledged());
             userPolicy.setApproved(policy.isApproved());
             userPolicy.setRequiresHRAcknowledgement(policy.isRequiresHRAcknowledgement());

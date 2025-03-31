@@ -1,5 +1,6 @@
 package com.sai.sprinto.policy.models;
 
+import com.sai.sprinto.policy.enums.AcknowledgementType;
 import com.sai.sprinto.policy.enums.PolicyType;
 import lombok.Data;
 
@@ -14,6 +15,7 @@ public class UserPolicy {
     private boolean acknowledged; // by a specific user
     private boolean acknowledgedByAll;
     private boolean requiresHRAcknowledgement;
+    private AcknowledgementType acknowledgementType = AcknowledgementType.MANUAL;
     private double version = 1.0;
     private boolean upgradeRequired;
     private boolean approved;
