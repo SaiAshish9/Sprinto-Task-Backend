@@ -1,4 +1,4 @@
-package com.sai.sprinto.policy.service;
+package com.sai.sprinto.policy.service.acknowledgement;
 
 import com.sai.sprinto.policy.builder.AcknowledgementBuilder;
 import com.sai.sprinto.policy.dto.AcknowledgementRequestDto;

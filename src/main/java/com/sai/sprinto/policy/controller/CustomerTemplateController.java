@@ -2,7 +2,7 @@ package com.sai.sprinto.policy.controller;
 
 import com.sai.sprinto.policy.dto.PostResponseDto;
 import com.sai.sprinto.policy.dto.CustomerTemplateRequestDto;
-import com.sai.sprinto.policy.service.CustomerTemplateService;
+import com.sai.sprinto.policy.service.customer.CustomerTemplateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

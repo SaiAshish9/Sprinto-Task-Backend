@@ -7,7 +7,7 @@ import com.sai.sprinto.policy.dto.UserPoliciesDto;
 import com.sai.sprinto.policy.entity.mongoDB.Policy;
 import com.sai.sprinto.policy.enums.Role;
 import com.sai.sprinto.policy.models.UserPolicy;
-import com.sai.sprinto.policy.service.PolicyService;
+import com.sai.sprinto.policy.service.policy.PolicyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

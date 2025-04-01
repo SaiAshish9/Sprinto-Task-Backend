@@ -3,7 +3,7 @@ package com.sai.sprinto.policy.controller;
 import com.sai.sprinto.policy.dto.PostResponseDto;
 import com.sai.sprinto.policy.dto.UserRequestDto;
 import com.sai.sprinto.policy.entity.sql.User;
-import com.sai.sprinto.policy.service.UserService;
+import com.sai.sprinto.policy.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

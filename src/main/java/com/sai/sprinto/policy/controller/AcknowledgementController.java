@@ -3,7 +3,7 @@ package com.sai.sprinto.policy.controller;
 import com.sai.sprinto.policy.dto.AcknowledgementRequestDto;
 import com.sai.sprinto.policy.dto.PostResponseDto;
 import com.sai.sprinto.policy.entity.sql.Acknowledgement;
-import com.sai.sprinto.policy.service.AcknowledgementService;
+import com.sai.sprinto.policy.service.acknowledgement.AcknowledgementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

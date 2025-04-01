@@ -1,4 +1,4 @@
-package com.sai.sprinto.policy.service;
+package com.sai.sprinto.policy.service.user;
 
 import com.sai.sprinto.policy.builder.UserBuilder;
 import com.sai.sprinto.policy.dto.UserRequestDto;

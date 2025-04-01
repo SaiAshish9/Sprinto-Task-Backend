@@ -1,4 +1,4 @@
-package com.sai.sprinto.policy.service;
+package com.sai.sprinto.policy.service.policy;
 
 import com.sai.sprinto.policy.builder.PolicyBuilder;
 import com.sai.sprinto.policy.builder.UserPolicyBuilder;
@@ -13,6 +13,7 @@ import com.sai.sprinto.policy.models.UserPolicy;
 import com.sai.sprinto.policy.repository.AcknowledgementRepository;
 import com.sai.sprinto.policy.repository.CustomerTemplateRepository;
 import com.sai.sprinto.policy.repository.PolicyRepository;
+import com.sai.sprinto.policy.service.acknowledgement.AcknowledgementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

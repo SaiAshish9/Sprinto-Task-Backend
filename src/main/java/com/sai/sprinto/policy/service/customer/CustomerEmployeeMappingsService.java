@@ -1,4 +1,4 @@
-package com.sai.sprinto.policy.service;
+package com.sai.sprinto.policy.service.customer;
 
 import com.sai.sprinto.policy.builder.CustomerEmployeeMappingBuilder;
 import com.sai.sprinto.policy.dto.CustomerEmployeeMappingRequestDto;
