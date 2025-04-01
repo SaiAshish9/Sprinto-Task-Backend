@@ -4999,3 +4999,4 @@ Consider defining a bean of type 'java.util.List' in your configuration.
 2025-04-01T23:18:01.142+05:30  INFO 12752 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
 2025-04-01T23:18:01.142+05:30  INFO 12752 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
 2025-04-01T23:18:01.157+05:30  INFO 12752 --- [main] c.sai.sprinto.policy.PolicyApplication   : Started PolicyApplication in 8.01 seconds (process running for 8.574)
+2025-04-01T23:45:54.473+05:30  WARN 12752 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m26s161ms).
