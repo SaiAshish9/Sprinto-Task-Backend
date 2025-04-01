@@ -90,7 +90,6 @@ public class PolicyService {
 
         List<UserPolicy> userPolicies = UserPolicyBuilder.createPolicies(approvedPolicies, acknowledgedPolicyIds, acknowledgementTypeMap);
         List<String> selectedPolicyIds = new ArrayList<>();
-        double maxVersion;
         List<CustomerTemplate> customerTemplates = new ArrayList<>();
 
         if (role == Role.CUSTOMER) {
@@ -102,7 +101,7 @@ public class PolicyService {
         }
 
         for (UserPolicy userPolicy : userPolicies) {
-            maxVersion = customerTemplates
+            double maxVersion = customerTemplates
                     .stream()
                     .filter(template -> template.getPolicyId().equals(userPolicy.getId()))
                     .map(CustomerTemplate::getVersion)
