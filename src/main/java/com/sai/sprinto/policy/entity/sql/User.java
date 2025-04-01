@@ -1,5 +1,5 @@
 package com.sai.sprinto.policy.entity.sql;
-import com.sai.sprinto.policy.enums.Role;
+import com.sai.sprinto.policy.enums.user.Role;
 import jakarta.persistence.*;
 import lombok.*;
 

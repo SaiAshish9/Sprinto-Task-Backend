@@ -1,10 +1,10 @@
 package com.sai.sprinto.policy.service.acknowledgement;
 
-import com.sai.sprinto.policy.builder.AcknowledgementBuilder;
-import com.sai.sprinto.policy.dto.AcknowledgementRequestDto;
+import com.sai.sprinto.policy.builder.acknowledgement.AcknowledgementBuilder;
+import com.sai.sprinto.policy.dto.acknowledgement.AcknowledgementRequestDto;
 import com.sai.sprinto.policy.entity.sql.Acknowledgement;
-import com.sai.sprinto.policy.enums.Role;
-import com.sai.sprinto.policy.repository.AcknowledgementRepository;
+import com.sai.sprinto.policy.enums.user.Role;
+import com.sai.sprinto.policy.repository.acknowledgement.AcknowledgementRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

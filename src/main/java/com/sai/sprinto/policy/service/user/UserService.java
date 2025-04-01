@@ -1,11 +1,11 @@
 package com.sai.sprinto.policy.service.user;
 
-import com.sai.sprinto.policy.builder.UserBuilder;
-import com.sai.sprinto.policy.dto.UserRequestDto;
+import com.sai.sprinto.policy.builder.user.UserBuilder;
+import com.sai.sprinto.policy.dto.user.UserRequestDto;
 import com.sai.sprinto.policy.entity.sql.CustomerEmployeeMappings;
 import com.sai.sprinto.policy.entity.sql.User;
-import com.sai.sprinto.policy.repository.CustomerEmployeeMappingsRepository;
-import com.sai.sprinto.policy.repository.UserRepository;
+import com.sai.sprinto.policy.repository.customer.CustomerEmployeeMappingsRepository;
+import com.sai.sprinto.policy.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

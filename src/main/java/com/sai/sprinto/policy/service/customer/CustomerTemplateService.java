@@ -1,8 +1,8 @@
 package com.sai.sprinto.policy.service.customer;
 
-import com.sai.sprinto.policy.builder.CustomerTemplateBuilder;
-import com.sai.sprinto.policy.dto.CustomerTemplateRequestDto;
-import com.sai.sprinto.policy.repository.CustomerTemplateRepository;
+import com.sai.sprinto.policy.builder.customer.CustomerTemplateBuilder;
+import com.sai.sprinto.policy.dto.customer.CustomerTemplateRequestDto;
+import com.sai.sprinto.policy.repository.customer.CustomerTemplateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.sai.sprinto.policy.entity.sql;
 
-import com.sai.sprinto.policy.enums.AcknowledgementType;
-import com.sai.sprinto.policy.listener.AcknowledgementListener;
+import com.sai.sprinto.policy.enums.acknowledgement.AcknowledgementType;
+import com.sai.sprinto.policy.listener.acknowledgement.AcknowledgementListener;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

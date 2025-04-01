@@ -1,8 +1,8 @@
 package com.sai.sprinto.policy.service.customer;
 
-import com.sai.sprinto.policy.builder.CustomerEmployeeMappingBuilder;
-import com.sai.sprinto.policy.dto.CustomerEmployeeMappingRequestDto;
-import com.sai.sprinto.policy.repository.CustomerEmployeeMappingsRepository;
+import com.sai.sprinto.policy.builder.customer.CustomerEmployeeMappingBuilder;
+import com.sai.sprinto.policy.dto.customer.CustomerEmployeeMappingRequestDto;
+import com.sai.sprinto.policy.repository.customer.CustomerEmployeeMappingsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
