@@ -17,10 +17,8 @@ public class QuartzConfig {
     }
 
     @Bean
-    public Trigger sampleJobTrigger() {
-        SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-                .withIntervalInHours(1)
-                .repeatForever();
+    public Trigger triggerJobAfterEvery30Days() {
+        CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 0 0 1/30 * ? *");
 
         return TriggerBuilder.newTrigger()
                 .forJob(jobDetail())
