@@ -4801,3 +4801,4 @@ Caused by: java.time.format.DateTimeParseException: Text '2024-03-25T12:00:00Z' 
 2025-04-01T06:52:14.853+05:30  INFO 93238 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-04-01T06:52:14.894+05:30  INFO 93238 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-04-01T06:52:14.923+05:30  INFO 93238 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-01T16:35:25.644+05:30  WARN 5634 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m44s549ms).
