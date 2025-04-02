@@ -26,6 +26,8 @@ public class UserPolicyBuilder {
             } else {
                 if (policy.getVersion() > 1) {
                     userPolicy.setAcknowledgementType(AcknowledgementType.PERIODIC);
+                } else if(policy.isCreatedByCustomer()) {
+                    userPolicy.setAcknowledgementType(AcknowledgementType.CUSTOMER);
                 } else {
                     userPolicy.setAcknowledgementType(AcknowledgementType.MANUAL);
                 }
