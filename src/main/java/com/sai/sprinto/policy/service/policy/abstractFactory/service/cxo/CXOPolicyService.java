@@ -30,13 +30,4 @@ public class CXOPolicyService extends AbstractUserPolicyService<CXOPolicyContext
         context.setApprovedPolicies(approvedPolicies);
     }
 
-    @Override
-    protected void populateAcknowledgedPolicyEntities(CXOPolicyContext context) {
-
-    }
-
-    @Override
-    protected void buildCustomerTemplatesAndSelectedPolicyIds(CXOPolicyContext context) {
-
-    }
 }

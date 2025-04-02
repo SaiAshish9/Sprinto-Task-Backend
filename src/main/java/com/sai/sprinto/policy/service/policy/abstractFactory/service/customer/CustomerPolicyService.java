@@ -30,13 +30,4 @@ public class CustomerPolicyService extends AbstractUserPolicyService<CustomerPol
         context.setApprovedPolicies(approvedPolicies);
     }
 
-    @Override
-    protected void populateAcknowledgedPolicyEntities(CustomerPolicyContext context) {
-
-    }
-
-    @Override
-    protected void buildCustomerTemplatesAndSelectedPolicyIds(CustomerPolicyContext context) {
-
-    }
 }

@@ -37,13 +37,4 @@ public class AdminPolicyService extends AbstractUserPolicyService<AdminPolicyCon
         context.setApprovedPolicies(approvedPolicies);
     }
 
-    @Override
-    protected void populateAcknowledgedPolicyEntities(AdminPolicyContext context) {
-
-    }
-
-    @Override
-    protected void buildCustomerTemplatesAndSelectedPolicyIds(AdminPolicyContext context) {
-
-    }
 }

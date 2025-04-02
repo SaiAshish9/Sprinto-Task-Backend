@@ -37,13 +37,4 @@ public class EngineerPolicyService extends AbstractUserPolicyService<EngineerPol
         context.setApprovedPolicies(approvedPolicies);
     }
 
-    @Override
-    protected void populateAcknowledgedPolicyEntities(EngineerPolicyContext context) {
-
-    }
-
-    @Override
-    protected void buildCustomerTemplatesAndSelectedPolicyIds(EngineerPolicyContext context) {
-
-    }
 }

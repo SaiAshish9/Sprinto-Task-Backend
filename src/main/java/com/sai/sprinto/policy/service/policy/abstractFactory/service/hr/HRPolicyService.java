@@ -37,13 +37,4 @@ public class HRPolicyService extends AbstractUserPolicyService<HRPolicyContext> 
         context.setApprovedPolicies(approvedPolicies);
     }
 
-    @Override
-    protected void populateAcknowledgedPolicyEntities(HRPolicyContext context) {
-
-    }
-
-    @Override
-    protected void buildCustomerTemplatesAndSelectedPolicyIds(HRPolicyContext context) {
-
-    }
 }

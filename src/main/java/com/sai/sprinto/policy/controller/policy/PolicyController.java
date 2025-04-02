@@ -35,7 +35,7 @@ public class PolicyController {
     }
 
     @PostMapping("user_policies")
-    public List<UserPolicy> getUserPolicies(@RequestBody UserPoliciesDto userPoliciesDto) {
+    public List<UserPolicy> getUserPolicies(@RequestBody UserPoliciesDto userPoliciesDto) throws Exception {
         List<UserPolicy> userPolicies = policyService.getUserPolicies(userPoliciesDto.getUserId(),
                 userPoliciesDto.getRole(), userPoliciesDto.isModified());
         return userPolicies;
